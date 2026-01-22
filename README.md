@@ -1,4 +1,4 @@
-# FlashInfer AI Kernel Generation Contest @ MLSys 2026
+# [FlashInfer AI Kernel Generation Contest @ MLSys 2026](http://mlsys26.flashinfer.ai/)
 
 Create high-performance GPU kernels for state-of-the-art LLM architectures on NVIDIA Blackwell GPUs with humans and/or AI agents.
 
@@ -71,6 +71,7 @@ This starter kit includes two example scripts to help you benchmark your kernel 
 Run benchmarks on NVIDIA B200 GPUs in the cloud via Modal.
 
 **Requirements:**
+
 - Modal account (authenticated via `modal setup`)
 - Dataset uploaded to Modal Volume (see Modal Setup section above)
 
@@ -85,6 +86,7 @@ modal run run_modal.py
 Run benchmarks on your local GPU. This script loads a solution from a JSON file and evaluates it against all workloads in the dataset using your local CUDA-capable GPU.
 
 **Requirements:**
+
 - Local CUDA-capable GPU
 - `FIB_DATASET_PATH` environment variable set to your local dataset path
 
