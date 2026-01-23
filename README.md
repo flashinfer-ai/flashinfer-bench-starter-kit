@@ -32,7 +32,9 @@ conda activate fi-bench
 pip install flashinfer-bench modal
 ```
 
-### Download the TraceSet
+### Download the Dataset
+
+We will provide our kernel definitions and workloads in [FlashInfer-Trace format](https://bench.flashinfer.ai/docs/flashinfer-trace). 
 
 Clone the competition dataset from HuggingFace:
 
