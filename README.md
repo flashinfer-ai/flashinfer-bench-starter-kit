@@ -52,7 +52,7 @@ We provide kernel definitions and workloads in [FlashInfer-Trace format](https:/
 
 ```bash
 git lfs install
-git clone https://huggingface.co/datasets/flashinfer-ai/mlsys26-contest
+git clone https://huggingface.co/datasets/flashinfer-ai/flashinfer-trace
 ```
 
 Set the environment variable:
