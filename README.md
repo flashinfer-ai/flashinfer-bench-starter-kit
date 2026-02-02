@@ -43,7 +43,8 @@ Click "Use this template" or fork this repository to create your solution repo.
 ```bash
 conda create -n fi-bench python=3.12
 conda activate fi-bench
-pip install flashinfer-bench modal
+pip install https://github.com/flashinfer-ai/flashinfer-bench.git
+pip install modal
 ```
 
 ### 3. Download the TraceSet
