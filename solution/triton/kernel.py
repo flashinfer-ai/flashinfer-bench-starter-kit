@@ -9,14 +9,11 @@ See the track definition for required function signature and semantics.
 
 import triton
 import triton.language as tl
+from . import dsa_sparse_attention
 
 
-@triton.jit
-def kernel():
+def kernel(q_nope, q_pe, ckv_cache, kpe_cache, sparse_indices, sm_scale, output, lse):
     """
-    Your Triton kernel implementation.
-
-    TODO: Implement your kernel according to the track definition.
-    The function signature should match the track requirements.
+    Proxy kernel implementation that calls the DSA Sparse Attention implementation.
     """
-    pass
+    dsa_sparse_attention.run(q_nope, q_pe, ckv_cache, kpe_cache, sparse_indices, sm_scale, output, lse)
