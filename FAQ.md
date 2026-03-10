@@ -72,7 +72,7 @@ The `BuildSpec` has a `dependencies` field, but builder-side support is still be
 
 **Q: Can I use CuTe-DSL or CuTile?**
 
-The competition supports **CUDA and Triton** as submission languages. CuTe-DSL and CuTile packages will be available in the official evaluation environment, so they can be used as part of a CUDA submission.
+Yes. The competition supports multiple languages including CUDA, Triton, CuTe-DSL, CuTile, Tilelang, and more. All of these will be available in the official evaluation environment.
 
 ---
 
