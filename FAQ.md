@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-Last updated: March 8, 2026
+Last updated: March 12, 2026
 
 ---
 
@@ -8,7 +8,7 @@ Last updated: March 8, 2026
 
 **Q: How do I submit my solution?**
 
-Create a starter-kit repo (one per track), push a git tag (`git tag submission-v1 && git push origin submission-v1`), and if your repo is private, grant read access to **flashinfer-bot** (Repo → Settings → Collaborators → Add people). We evaluate the most recent tag in each repo. See [Yong's bi-weekly evaluation announcement](https://discord.com/channels/flashinfer) for full details.
+Create a starter-kit repo (one per track), push a git tag (`git tag submission-v1 && git push origin submission-v1`), and if your repo is private, grant read access to **flashinfer-bot** (Repo → Settings → Collaborators → Add people). We evaluate the most recent tag in each repo. When a track has multiple definitions (e.g., GDN decode + prefill), place each submission in a top-level subfolder named after the definition name.
 
 **Q: I used "Use this template" instead of forking. Is that okay?**
 
@@ -58,13 +58,9 @@ Yes. The flashinfer-bench TorchBuilder uses `torch.utils.cpp_extension` under th
 
 The builders currently do not support custom compile flags. As a workaround, submit a Python solution and compile the CUDA kernel yourself within the code (using `torch.utils.cpp_extension.load()` or `tvm_ffi.cpp.load()`). We will consider adding compile flag support in a future update.
 
-**Q: How do I declare C/C++ third-party dependencies?**
-
-We will open a process for teams to submit required C++ third-party library links and includes later.
-
 **Q: Can I install additional Python packages?**
 
-The `BuildSpec` has a `dependencies` field, but builder-side support is still being finalized. For Python packages, we will use the packages in our official evaluation environment (versions to be announced). We will open a link for teams to request additional libraries. For C++ third-party libraries, we will also open a submission process later.
+The `BuildSpec` has a `dependencies` field, but builder-side support is still being finalized. For Python packages, we will use the packages in our official evaluation environment (versions to be announced). We will open a link for teams to request additional libraries.
 
 ---
 
