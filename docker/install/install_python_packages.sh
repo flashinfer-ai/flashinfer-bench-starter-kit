@@ -22,4 +22,4 @@ else
 fi
 
 # Contest-specific packages
-pip3 install tilelang cuda-tile cupti-python pandas
+pip3 install tilelang cuda-tile cupti-python pandas cupy-cuda13x
