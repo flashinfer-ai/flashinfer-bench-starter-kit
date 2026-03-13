@@ -94,32 +94,6 @@ Modal B200 instances are **sm100**.
 
 ---
 
-## Known Issues
-
-**Q: GDN Prefill reference implementation fails correctness — output explodes on longer sequences.**
-
-This is a known issue. The reference implementation produces numerically unstable output on longer sequences. We are fixing the workload dataset and will release the corrected version soon.
-
-**Q: `flashinfer.fused_moe.trtllm_fp8_block_scale_moe` produces INCORRECT_NUMERICAL with very large errors.**
-
-This is a known issue. We will fix the benchmark system and workload data. In the meantime, you can start from the definition's reference implementation.
-
-**Q: My FP8 kernel shows very high max_relative_error but is still marked correct. Is the final evaluation stricter?**
-
-The evaluation uses relaxed tolerance settings for FP8 kernels, allowing a certain percentage of elements to not match exactly. A high max error while still being marked correct is expected behavior as long as the majority of elements are within tolerance. The final evaluation will use the same criteria.
-
-**Q: DSA reference upcasts to fp32 — impossible to match exact correctness with fp8 MMA.**
-
-The reference uses fp32 to ensure numerical correctness of the baseline. The evaluation tolerance settings already account for fp8 precision loss — exact matching is not required.
-
-**Q: Are there numerical issues with DSA (sparse attention)?**
-
-We are aware of and investigating DSA correctness concerns. The updated benchmark system and workloads will address these.
-
-**Q: Benchmark runtimes seem inflated (issue #195).**
-
-Fixed in the latest version of flashinfer-bench ([PR #196](https://github.com/flashinfer-ai/flashinfer-bench/pull/196)). Timing now uses CUPTI activity tracing for hardware-level precision. Please update to the latest version.
-
 ---
 
 ## Other
