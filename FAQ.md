@@ -8,7 +8,9 @@ Last updated: March 12, 2026
 
 **Q: How do I submit my solution?**
 
-Create a starter-kit repo (one per track), push a git tag (`git tag submission-v1 && git push origin submission-v1`), and if your repo is private, grant read access to **flashinfer-bot** (Repo → Settings → Collaborators → Add people). We evaluate the most recent tag in each repo. When a track has multiple definitions (e.g., GDN decode + prefill), place each submission in a top-level subfolder named after the definition name.
+Create a starter-kit repo (one per track), push a git tag, and if your repo is private, grant read access to **flashinfer-bot** (Repo → Settings → Collaborators → Add people).
+
+Different approaches (`full-agent` or `agent-assisted`) should be in different repositories. For one approach, if there are multiple tracks (i.e., multiple definitions, e.g., GDN decode + prefill), place each submission in a top-level subfolder named after the definition name.
 
 **Q: I used "Use this template" instead of forking. Is that okay?**
 
