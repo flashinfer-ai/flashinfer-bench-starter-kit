@@ -126,6 +126,6 @@ This is an intermittent network issue on the Modal platform. Please retry.
 
 Implementation baselines for all kernels will be provided in a subsequent update.
 
-**Q: What's the difference between the agent track and the agent-assisted track?**
+**Q: What's the difference between the full-agent track and the agent-assisted track?**
 
 The **agent track** requires submitting the agent itself — it must fully reproduce the kernel end-to-end. The **agent-assisted track** allows experts and agents to collaborate; you submit the kernel code. Note: in the agent track, your agent's prompts and database must not contain large portions of the final solution (we will verify manually).
