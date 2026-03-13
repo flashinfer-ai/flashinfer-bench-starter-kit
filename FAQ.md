@@ -34,7 +34,7 @@ Speedup is measured relative to the **definition reference** (a simple Python re
 
 **Q: For Track C (GDN), how are decode and prefill weighted?**
 
-Decode and prefill are separate definitions, scored and ranked independently.
+Decode and prefill are separate definitions. Our final score is the average speedup of the two definitions.
 
 **Q: What is the maximum team size?**
 
