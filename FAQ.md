@@ -86,7 +86,7 @@ Same situation — still working with Modal to find a solution.
 
 **Q: I haven't received my Modal credits / B200 access. What should I do?**
 
-We are currently running out of credits and looking into alternative solutions. Please email `mlsys26-contest-contact@nvidia.com` to check your status.
+We are currently running out of credits and looking into alternative solutions.
 
 **Q: Is Modal's B200 sm100 or sm100a?**
 
