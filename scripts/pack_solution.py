@@ -53,10 +53,12 @@ def pack_solution(output_path: Path = None) -> Path:
         raise FileNotFoundError(f"Source directory not found: {source_dir}")
 
     # Create build spec
+    dps = build_config.get("destination_passing_style", True)
     spec = BuildSpec(
         language=language,
         target_hardware=["cuda"],
         entry_point=entry_point,
+        destination_passing_style=dps,
     )
 
     # Pack the solution
