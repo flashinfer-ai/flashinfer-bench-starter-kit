@@ -40,6 +40,10 @@ Decode and prefill are separate definitions. Our final score is the average spee
 
 Maximum **5 members** per team.
 
+**Q: For Tracks B/C, do teams need to submit both kernels?**
+
+Teams are expected to submit both operators/kernels for Tracks B/C, and the ranking is based on the average performance across the two. If only one of the two operators is submitted or correct, your ranking score will be half of the score of the correct operator.
+
 ---
 
 ## Official Evaluation Environment
