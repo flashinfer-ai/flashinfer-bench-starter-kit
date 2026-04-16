@@ -6,14 +6,22 @@ This document describes how we evaluate submissions for the [MLSys 2026 NVIDIA T
 
 | Field | Value |
 |---|---|
-| Docker image | `flashinfer/flashinfer-ci-cu132:latest` |
-| Hardware | Bare-metal NVIDIA B200 |
+| Docker image | `flashinfer/flashinfer-ci-cu132:20260401-2c675fb` |
+| Hardware | Bare-metal NVIDIA B200 (sm_100a) |
 | GPU clocks | Locked to max (`nvidia-smi -ac 3996,1965`) |
+| CUDA | 13.2 |
+| Python | 3.12 |
+| PyTorch | 2.12.0+cu132 |
+| Triton | 3.6.0 |
 
 Packages inside the container:
 - FlashInfer (latest main, built from source)
 - FlashInfer-Bench (latest main, built from source)
 - `cupti-python` for accurate GPU timing
+- `deep-gemm`
+- `helion`
+- `mlc-ai-tirx-cu130` (TVM)
+- `nvidia-cutlass-dsl` (CuTe DSL)
 - Contest dataset from https://huggingface.co/datasets/flashinfer-ai/mlsys26-contest
 
 ## Evaluation Pipeline
@@ -76,6 +84,8 @@ The contest dataset includes FlashInfer baseline solutions under `solutions/base
 | Track | Solution Name | Definition |
 |---|---|---|
 | MoE | `flashinfer_wrapper_9sdjf3` | `moe_fp8_block_scale_ds_routing_topk8_ng8_kg4_e32_h7168_i2048` |
+| DSA Attention | `flashinfer_wrapper_5af199` | `dsa_sparse_attention_h16_ckv512_kpe64_topk2048_ps64` |
+| DSA Indexer | `flashinfer_deepgemm_wrapper_2ba145` | `dsa_topk_indexer_fp8_h64_d128_topk2048_ps64` |
 | GDN Decode | `flashinfer_wrapper_9b7f1e` | `gdn_decode_qk4_v8_d128_k_last` |
 | GDN Prefill | `flashinfer_wrapper_123ca6` | `gdn_prefill_qk4_v8_d128_k_last` |
 
@@ -98,6 +108,9 @@ Make sure your latest submission tag is pushed before each evaluation date.
 | Date | Event |
 |---|---|
 | Feb 15, 2026 | Registration deadline |
-| Mar 13, 2026 | Second evaluation |
-| Mar 27, 2026 | Third evaluation |
-| Apr 10, 2026 | Fourth evaluation |
+| Feb 27, 2026 | First bi-weekly evaluation |
+| Mar 13, 2026 | Second bi-weekly evaluation |
+| Mar 27, 2026 | Third bi-weekly evaluation |
+| Apr 12, 2026 | Fourth bi-weekly evaluation |
+| Apr 18, 2026 | Extra validation round (compilation/correctness check only, no ranking) |
+| **Apr 24, 2026** | **Final kernel submission deadline (11:59 PM AoE)** |
