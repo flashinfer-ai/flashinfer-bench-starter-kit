@@ -99,6 +99,55 @@ flashinfer-bench run \
   --use-isolated-runner --timeout 300
 ```
 
+## Scoring
+
+Two layers:
+
+1. **Per-kernel speedup** — arithmetic mean of per-workload `FlashInfer_baseline_latency / your_kernel_latency`. Correctness-gated: any failing workload zeros the whole kernel's score.
+
+2. **Per-track speedup** — for multi-kernel tracks (DSA, GDN), arithmetic mean of per-kernel speedups:
+
+   ```
+   track_speedup = (sum of per-kernel speedups) / expected_kernel_count
+   ```
+
+   `expected_kernel_count` is 1 for MoE, 2 for DSA, 2 for GDN. A missing or failing kernel contributes 0 to the numerator, so single-kernel submissions on DSA/GDN are effectively halved.
+
+### Compute your own score locally
+
+After running `flashinfer-bench run` to produce traces (see the per-track commands above), use `TraceSet.get_author_score` — this is exactly what our pipeline's `compute_track_scores.py` does:
+
+```python
+from flashinfer_bench.data import TraceSet
+
+trace_set = TraceSet.from_path("./contest-dataset")
+
+# Normalize baseline author — some baselines (e.g. DSA indexer) carry a
+# combined author like "flashinfer, deep_gemm" that we collapse to "flashinfer".
+for sols in trace_set.solutions.values():
+    for i, sol in enumerate(sols):
+        if sol.author and sol.author.startswith("flashinfer") and sol.author != "flashinfer":
+            sols[i] = sol.model_copy(update={"author": "flashinfer"})
+            trace_set._solution_by_name[sol.name] = sols[i]
+
+TRACKS = {
+    "MoE": ("moe",       1),
+    "DSA": ("dsa_paged", 2),
+    "GDN": ("gdn",       2),
+}
+
+for track, (op_type, expected) in TRACKS.items():
+    s = trace_set.get_author_score(
+        "your-team-name",                 # the `author` field in your solution JSON
+        baseline_author="flashinfer",
+        op_type=op_type,
+    )
+    if s is None:
+        continue
+    track_speedup = s.avg_speedup * s.definitions / expected   # missing-kernel halving
+    print(f"{track}: {track_speedup:.3f}x  ({s.definitions}/{expected} kernels)")
+```
+
 ## Schedule
 
 Bi-weekly evaluations are provided to help participants track their progress. These results are **not** counted toward the final evaluation — only the final submission at the kernel submission deadline will be scored.
