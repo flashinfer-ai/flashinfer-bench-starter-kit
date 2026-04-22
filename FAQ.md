@@ -30,7 +30,13 @@ The final score for a definition is the **arithmetic mean** of speedups across a
 
 **Q: What does "speedup" mean exactly?**
 
-Speedup is measured relative to the **definition reference** (a simple Python reference implementation), not the optimized FlashInfer baseline. The reference is intentionally kept simple to define correctness.
+- **Correctness check**: your kernel's output is compared against the **Python/PyTorch reference implementation** (a simple, slow "ground truth" that defines the kernel semantics). A solution should pass this check before performance number is reported.
+- **Performance ranking (speedup)**: once a solution passes correctness, speedup is measured as
+  ```
+  speedup = FlashInfer_baseline_latency / your_kernel_latency
+  ```
+  i.e., relative to the optimized **FlashInfer baseline** (`flashinfer_wrapper_*` solutions in the dataset). Higher is better.
+
 
 **Q: For Track C (GDN), how are decode and prefill weighted?**
 
