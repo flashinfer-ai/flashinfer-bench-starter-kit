@@ -1,6 +1,6 @@
-# MLSys 2026 FlashInfer Contest — Writeup Requirements
+# FlashInfer AI Kernel Generation Contest @ MLSys 2026 — Technical Write-up Requirements
 
-Congratulations on your performance in the contest! To be eligible for awards, you must submit a technical writeup describing your solution.
+Congratulations on your performance in the contest\! To be eligible for awards, you must submit a technical write-up describing your solution.
 
 ## Deadline
 
@@ -9,20 +9,20 @@ Congratulations on your performance in the contest! To be eligible for awards, y
 ## Format
 
 - **Max 4 pages** for a single track, PDF format, free layout (no template required)
-- If covering **multiple tracks** in one report: max 4 + 2 per additional track (2 tracks = 6 pages, 3 tracks = 8 pages)
+- If covering **multiple tracks** in one report: max 4 \+ 2 per additional track (2 tracks \= 6 pages, 3 tracks \= 8 pages)
 - Reasonable font size (11pt or larger)
 - References do not count toward the page limit
-- If you participated in **both** Full-Agent and Agent-Assisted approaches, please submit **separate** writeups for each
+- If you participated in **both** Full-Agent and Agent-Assisted approaches, please submit **separate** write-ups for each
 
 ## Submission
 
-Submit your writeup (PDF) via this Google Form:
+Submit your write-up (PDF) via this Google Form:
 
 **https://docs.google.com/forms/d/e/1FAIpQLSdeffx8ZEtd5Hud6wstynRNEP8hHlP45n7oq-kb4w3SsbxFMA/viewform**
 
 ## Content Guidelines
 
-Your writeup should cover the following areas. Not every section is required — focus on the parts most relevant to your solution.
+Your write-up should cover the following areas. Not every section is required — focus on the parts most relevant to your solution.
 
 ### For All Submissions
 
@@ -42,6 +42,5 @@ Your writeup should cover the following areas. Not every section is required —
 
 ## Notes
 
-- Award decisions will be announced by **May 11, 2026**. Teams without a submitted writeup will not be considered for awards
-- Winners will be invited to present their solutions at the **MLSys 2026 Award Ceremony (May 17–22, Bellevue, WA)**
-- Writeups may be published on the contest website with your permission
+- Award decisions will be announced by **May 11, 2026**. Teams without a submitted write-up will not be considered for awards
+- Write-ups may be published on the contest website with your permission
